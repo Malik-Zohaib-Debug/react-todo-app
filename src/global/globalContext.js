@@ -1,16 +1,16 @@
 import React, {createContext, useReducer} from "react";
-import { AppReducer } from "./globalReducer";
+import AppReducer  from "./globalReducer";
 
 let initialState = {
     tasks: [
-        {id: 1, Tasks: 'Learning React', status:false},
-        {id: 2, Tasks: 'Reading a book', status:true},
+        {id: 1, Tasks: 'Learning React'},
+        {id: 2, Tasks: 'Reading a book'},
     ]
 }
 
 export const GlobalContext = createContext(initialState);
 
-export default GlobalProvider = ({children}) => {
+export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     function addTask(task){
@@ -33,7 +33,7 @@ export default GlobalProvider = ({children}) => {
         deleteTask
     }}>
         {children}
-    </GlobalContext.Provider>)
+    </GlobalContext.Provider>);
 } 
 
 

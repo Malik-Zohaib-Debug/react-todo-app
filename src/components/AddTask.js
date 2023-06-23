@@ -4,7 +4,6 @@ import { GlobalContext } from "../global/globalContext";
 export default function AddTask(){
 
     let [task, setTask] = useState([]);
-    let [status, setStatus] = useState(false);
 
     const {addTask} = useContext(GlobalContext);
 
@@ -13,21 +12,23 @@ export default function AddTask(){
         
         const newTask = {
             id: Math.floor(Math.random() * 10000000),
-            task,
-            status
+            task
         }
+
+        addTask(newTask);
     }
 
 
     return(
-        <form onSubmit={onSubmit}>
-            <div className="main-container">
+        <>
+            <h3>Add New Task</h3>
+            <form onSubmit={onSubmit}>
                 <div className="form-control">
-                    <input type="text" placeholder="Add your task" onChange={e => setTask(e.target.value)}/>
-                    <button onClick={setStatus(true)}>OK</button>
-                    <button onClick={setStatus(false)}>X</button>
+                    <label htmlFor="text">Task</label>
+                    <input type="text" value={task} onChange={(e) => setTask(e.target.value)}/>
                 </div>
-            </div>
-        </form>    
+                <button>Submit</button>
+            </form>
+        </>
     );
 }

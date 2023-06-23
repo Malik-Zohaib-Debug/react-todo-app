@@ -1,6 +1,8 @@
-import GlobalProvider from './global/globalContext';
+
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
+import { GlobalProvider } from "./global/globalContext";
+import TasksList from "./components/TasksList";
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
       <Header />
       <div className="App">
         <AddTask />
+        <TasksList />
       </div>
     </GlobalProvider>
   );

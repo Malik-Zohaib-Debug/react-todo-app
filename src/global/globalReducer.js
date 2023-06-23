@@ -1,5 +1,5 @@
-export const AppReducer = (state, action) => {
-    switch(state.type){
+let AppReducer = (state, action) => {
+    switch(action.type){
         case 'ADD_TASK':
             return {
                 ...state,
@@ -14,3 +14,5 @@ export const AppReducer = (state, action) => {
             return state
     }
 }
+
+export default AppReducer;
