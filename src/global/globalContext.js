@@ -3,8 +3,8 @@ import AppReducer  from "./globalReducer";
 
 let initialState = {
     tasks: [
-        {id: 1, Tasks: 'Learning React'},
-        {id: 2, Tasks: 'Reading a book'},
+        {id: 1, tasks: 'Learning React'},
+        {id: 2, tasks: 'Reading a book'},
     ]
 }
 

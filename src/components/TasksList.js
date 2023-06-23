@@ -4,15 +4,15 @@ import Task from './Task';
 
 const TasksList = () => {
     
-    const tasks = useContext(GlobalContext);
+    const {tasks} = useContext(GlobalContext);
 
-    let allTasks = tasks.tasks;
+    console.log(tasks)
     
     return(
         <>
          <h3>All Tasks</h3>
          <ul className="list">
-            {allTasks.map(task => (<Task key={task.id} tasks={task} />))}
+            {tasks.map(task => (<Task key={task.id} tasks={task.tasks} />))}
          </ul>
         </>
     );
