@@ -1,8 +1,17 @@
-
+import Header from "./components/Header";
+import AddTasks from "./components/AddTasks";
+import TasksLists from "./components/TasksLists";
+import GlobalProvider from "./global/globalContext";
 
 function App() {
   return (
-    <h1>TODO APP</h1>
+    <GlobalProvider>
+      <Header />
+      <div className="App">
+        <AddTasks />
+        <TasksLists />
+      </div>
+    </GlobalProvider>
   );
 }
 
